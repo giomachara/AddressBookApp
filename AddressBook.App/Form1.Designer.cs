@@ -34,10 +34,10 @@ namespace AddressBook.App
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_name = new System.Windows.Forms.TextBox();
-            this.textBox_surname = new System.Windows.Forms.TextBox();
-            this.textBox_email = new System.Windows.Forms.TextBox();
-            this.textBox_phone = new System.Windows.Forms.TextBox();
+            this.textBox_name = new LetterTextBox();
+            this.textBox_surname = new LetterTextBox();
+            this.textBox_email = new LetterTextBox();
+            this.textBox_phone = new NumericTextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button_save = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@ namespace AddressBook.App
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 47);
+            this.label1.Location = new System.Drawing.Point(103, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 18);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@ namespace AddressBook.App
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(98, 92);
+            this.label2.Location = new System.Drawing.Point(77, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 18);
             this.label2.TabIndex = 0;
@@ -71,7 +71,7 @@ namespace AddressBook.App
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 135);
+            this.label3.Location = new System.Drawing.Point(54, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 18);
             this.label3.TabIndex = 0;
@@ -81,7 +81,7 @@ namespace AddressBook.App
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(101, 180);
+            this.label4.Location = new System.Drawing.Point(80, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 18);
             this.label4.TabIndex = 0;
@@ -89,28 +89,28 @@ namespace AddressBook.App
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(181, 90);
+            this.textBox_name.Location = new System.Drawing.Point(160, 118);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(184, 20);
             this.textBox_name.TabIndex = 1;
             // 
             // textBox_surname
             // 
-            this.textBox_surname.Location = new System.Drawing.Point(181, 133);
+            this.textBox_surname.Location = new System.Drawing.Point(160, 161);
             this.textBox_surname.Name = "textBox_surname";
             this.textBox_surname.Size = new System.Drawing.Size(184, 20);
             this.textBox_surname.TabIndex = 1;
             // 
             // textBox_email
             // 
-            this.textBox_email.Location = new System.Drawing.Point(181, 178);
+            this.textBox_email.Location = new System.Drawing.Point(160, 206);
             this.textBox_email.Name = "textBox_email";
             this.textBox_email.Size = new System.Drawing.Size(184, 20);
             this.textBox_email.TabIndex = 1;
             // 
             // textBox_phone
             // 
-            this.textBox_phone.Location = new System.Drawing.Point(181, 227);
+            this.textBox_phone.Location = new System.Drawing.Point(160, 255);
             this.textBox_phone.Name = "textBox_phone";
             this.textBox_phone.Size = new System.Drawing.Size(184, 20);
             this.textBox_phone.TabIndex = 1;
@@ -118,7 +118,7 @@ namespace AddressBook.App
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(441, 45);
+            this.listBox1.Location = new System.Drawing.Point(395, 73);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(190, 199);
             this.listBox1.TabIndex = 2;
@@ -127,7 +127,7 @@ namespace AddressBook.App
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(486, 22);
+            this.label6.Location = new System.Drawing.Point(440, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 20);
             this.label6.TabIndex = 3;
@@ -136,7 +136,7 @@ namespace AddressBook.App
             // button_save
             // 
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(78, 317);
+            this.button_save.Location = new System.Drawing.Point(78, 345);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(143, 47);
             this.button_save.TabIndex = 1;
@@ -147,7 +147,7 @@ namespace AddressBook.App
             // button_edit
             // 
             this.button_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_edit.Location = new System.Drawing.Point(267, 317);
+            this.button_edit.Location = new System.Drawing.Point(267, 345);
             this.button_edit.Name = "button_edit";
             this.button_edit.Size = new System.Drawing.Size(143, 47);
             this.button_edit.TabIndex = 1;
@@ -157,7 +157,7 @@ namespace AddressBook.App
             // button_remove
             // 
             this.button_remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_remove.Location = new System.Drawing.Point(441, 317);
+            this.button_remove.Location = new System.Drawing.Point(441, 345);
             this.button_remove.Name = "button_remove";
             this.button_remove.Size = new System.Drawing.Size(143, 47);
             this.button_remove.TabIndex = 1;
@@ -169,7 +169,7 @@ namespace AddressBook.App
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(101, 229);
+            this.label5.Location = new System.Drawing.Point(80, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 18);
             this.label5.TabIndex = 0;
@@ -177,7 +177,7 @@ namespace AddressBook.App
             // 
             // textBox_id
             // 
-            this.textBox_id.Location = new System.Drawing.Point(181, 45);
+            this.textBox_id.Location = new System.Drawing.Point(160, 73);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(57, 20);
             this.textBox_id.TabIndex = 1;
@@ -186,7 +186,7 @@ namespace AddressBook.App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 414);
+            this.ClientSize = new System.Drawing.Size(662, 416);
             this.Controls.Add(this.button_remove);
             this.Controls.Add(this.button_edit);
             this.Controls.Add(this.button_save);
@@ -243,6 +243,22 @@ namespace AddressBook.App
             }
 
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+    }
+
+    public class LetterTextBox : TextBox
+    {
+        public LetterTextBox()
+        {
+            this.KeyPress += LetterTextBox_KeyPress;
+        }
+
+        private void LetterTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != '@' && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
