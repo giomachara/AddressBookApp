@@ -25,7 +25,8 @@ namespace AddressBook.App
             {
                 contactService.Add(contact);
                 listBox1.Items.Add(contact);
-                MessageBox.Show("Contact added successfully!");                
+                TextBoxClear();
+                MessageBox.Show("Contact added successfully!");
             }
             catch (Exception ex)
             {
@@ -36,6 +37,21 @@ namespace AddressBook.App
         private void button_remove_Click(object sender, EventArgs e)
         {
             Contact selectedContact = listBox1.SelectedItem as Contact;
+
+            if (listBox1.Items.Count == 0)
+            {
+                MessageBox.Show($"There are no contacts to remove");
+                return;
+            }
+
+            if (selectedContact != null)
+            {
+                contactService.Remove(selectedContact.Id);
+                listBox1.Items.Remove(selectedContact);
+                TextBoxClear();
+                MessageBox.Show("Contact removed successfully!");
+                return;
+            }
 
             if (string.IsNullOrEmpty(textBox_id.Text))
             {
@@ -51,19 +67,20 @@ namespace AddressBook.App
                     ListBoxRemoveId(textBox_id.Text);
                 }
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
-
                 MessageBox.Show($"An error occurred while removing the contact: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
 
-            if (selectedContact !=null)
-            {
-                contactService.Remove(selectedContact.Id);
-                listBox1.Items.Remove(selectedContact);
-                MessageBox.Show("Contact removed successfully!");
-            }
+        }
+
+        private void TextBoxClear()
+        {
+            textBox_id.Clear();
+            textBox_name.Clear();
+            textBox_surname.Clear();
+            textBox_email.Clear();
+            textBox_phone.Clear();
         }
 
         private void ListBoxRemoveId(string id)

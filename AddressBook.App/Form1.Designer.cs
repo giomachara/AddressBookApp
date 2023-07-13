@@ -206,7 +206,6 @@ namespace AddressBook.App
             this.Text = "AddressBook";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
