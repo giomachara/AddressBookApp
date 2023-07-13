@@ -34,7 +34,6 @@ namespace AddressBook.App
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_id = new AddressBook.App.NumericTextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.textBox_surname = new System.Windows.Forms.TextBox();
             this.textBox_email = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@ namespace AddressBook.App
             this.button_edit = new System.Windows.Forms.Button();
             this.button_remove = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox_id = new AddressBook.App.NumericTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -86,13 +86,6 @@ namespace AddressBook.App
             this.label4.Size = new System.Drawing.Size(45, 18);
             this.label4.TabIndex = 0;
             this.label4.Text = "Email";
-            // 
-            // textBox_id
-            // 
-            this.textBox_id.Location = new System.Drawing.Point(181, 45);
-            this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(57, 20);
-            this.textBox_id.TabIndex = 1;
             // 
             // textBox_name
             // 
@@ -146,7 +139,7 @@ namespace AddressBook.App
             this.button_save.Location = new System.Drawing.Point(78, 317);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(143, 47);
-            this.button_save.TabIndex = 4;
+            this.button_save.TabIndex = 1;
             this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.buttonSave_Click);
@@ -157,7 +150,7 @@ namespace AddressBook.App
             this.button_edit.Location = new System.Drawing.Point(267, 317);
             this.button_edit.Name = "button_edit";
             this.button_edit.Size = new System.Drawing.Size(143, 47);
-            this.button_edit.TabIndex = 4;
+            this.button_edit.TabIndex = 1;
             this.button_edit.Text = "Edit";
             this.button_edit.UseVisualStyleBackColor = true;
             // 
@@ -167,9 +160,10 @@ namespace AddressBook.App
             this.button_remove.Location = new System.Drawing.Point(441, 317);
             this.button_remove.Name = "button_remove";
             this.button_remove.Size = new System.Drawing.Size(143, 47);
-            this.button_remove.TabIndex = 4;
+            this.button_remove.TabIndex = 1;
             this.button_remove.Text = "Remove";
             this.button_remove.UseVisualStyleBackColor = true;
+            this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
             // 
             // label5
             // 
@@ -180,6 +174,13 @@ namespace AddressBook.App
             this.label5.Size = new System.Drawing.Size(51, 18);
             this.label5.TabIndex = 0;
             this.label5.Text = "Phone";
+            // 
+            // textBox_id
+            // 
+            this.textBox_id.Location = new System.Drawing.Point(181, 45);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(57, 20);
+            this.textBox_id.TabIndex = 1;
             // 
             // Form1
             // 
